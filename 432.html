@@ -4,8 +4,30 @@
     <center><button onclick='fun1()'>拳头</button>
     <button onclick='fun2()'>剪刀</button>
     <button onclick='fun3()'>布</button></center>
+    <button onclick='fun4()'>刷新</button></center>
 <script>
+	function fun4(){
+		location.reload()
+	}
+    function h_win(){
+    	counter++;
+ 		let w =  'h_score=' + counter;
+            document.getElementById('h_score').innerHTML = w;
+    }
+    function c_win() {
+    	counter1++;
+ 		let w =  'c_score=' + counter1;
+            document.getElementById('c_score').innerHTML = w;
+    }
+	let counter = 0;
+	let counter1 = 0;
     cus = ['拳头','剪刀','布'];
+    function detect(){
+    	if(counter == 4 || counter1 == 4){
+    		document.getElementById('gameover').innerHTML = 'Gameover';
+    	}
+
+    }
     function fun1() {
         let a = Math.floor(Math.random() * 3); 
         alert("电脑出：" + cus[a]);
@@ -14,10 +36,14 @@
         }
         else if (cus[a] == '布') {
             alert('你输了');
+            c_win();
         }
         else {
             alert('你赢了');
+            h_win();
+
         }
+        detect();
     } 
 
     function fun2() {
@@ -25,13 +51,17 @@
         alert("电脑出：" + cus[a]);
         if (cus[a] == '拳头') {
             alert('你输了');
+            c_win();
         }
         else if (cus[a] == '布') {
             alert('你赢了');
+            h_win();        
+
         }
         else {
             alert('平局');
         }
+        detect();
     } 
 
     function fun3() {
@@ -39,14 +69,21 @@
         alert("电脑出：" + cus[a]);
         if (cus[a] == '拳头') {
             alert('你赢了');
+            h_win();
         }
         else if (cus[a] == '布') {
             alert('平局');
         }
         else {
             alert('你输了');
+            c_win(); 
         }
+        detect();
     }
+
 </script>
+<h1 id = 'h_score'>h_score = 0</h1>
+<h1 id = 'c_score'>c_score = 0</h1>
+<h1 id = 'gameover'>--------</h1>
 </body>
 </html>
