@@ -1,0 +1,52 @@
+<html>
+<body>
+  	<a href = 'index.html'>主页</a>
+    <center><button onclick='fun1()'>拳头</button>
+    <button onclick='fun2()'>剪刀</button>
+    <button onclick='fun3()'>布</button></center>
+<script>
+    cus = ['拳头','剪刀','布'];
+    function fun1() {
+        let a = Math.floor(Math.random() * 3); 
+        alert("电脑出：" + cus[a]);
+        if (cus[a] == '拳头') {
+            alert('平局');
+        }
+        else if (cus[a] == '布') {
+            alert('你输了');
+        }
+        else {
+            alert('你赢了');
+        }
+    } 
+
+    function fun2() {
+        let a = Math.floor(Math.random() * 3);
+        alert("电脑出：" + cus[a]);
+        if (cus[a] == '拳头') {
+            alert('你输了');
+        }
+        else if (cus[a] == '布') {
+            alert('你赢了');
+        }
+        else {
+            alert('平局');
+        }
+    } 
+
+    function fun3() {
+        let a = Math.floor(Math.random() * 3);
+        alert("电脑出：" + cus[a]);
+        if (cus[a] == '拳头') {
+            alert('你赢了');
+        }
+        else if (cus[a] == '布') {
+            alert('平局');
+        }
+        else {
+            alert('你输了');
+        }
+    }
+</script>
+</body>
+</html>
